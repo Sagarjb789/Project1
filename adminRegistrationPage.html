@@ -1,0 +1,88 @@
+
+<div ng-show="logInFormPage" class="panel panel-primary">
+	<div class="panel-heading">Admin Registration Form</div>
+	<div class="panel-body">
+
+	<form class="form-horizontal" name="loginForm" novalidate>
+
+		<div class="form-group">
+		<label class="control-label col-sm-2">Username:</label>
+		<div class="col-sm-6">
+		<input class="form-control" type="text" placeholder="Please enter username" 
+		ng-model="user.username" name="username" ng-disabled="disableInput" required>
+		<span style="color:red" ng-show="!loginForm.username.$pristine && loginForm.username.$invalid">
+			*Please enter at least one character.</span>
+		</div>
+		</div>
+		
+		
+		<div class="form-group">
+		<label class="control-label col-sm-2">Password:</label>
+		<div class="col-sm-6">
+		<input class="form-control" type="password" placeholder="Please enter password" 
+		ng-model="user.password" name="password" ng-minlength="6" ng-disabled="disableInput" required>
+		<span style="color:red" ng-show="!loginForm.password.$pristine && loginForm.password.$invalid">
+			*Password must be at least six character.</span>
+		</div>
+		</div>
+		
+		<div class="form-group">
+		<label class="control-label col-sm-2">Email:</label>
+		<div class="col-sm-6">
+		<input class="form-control" type="email" placeholder="Please enter email id" 
+		ng-model="user.emailId" name="emailId" ng-disabled="disableInput" required>
+		<span style="color:red" ng-show="!loginForm.emailId.$pristine && loginForm.emailId.$invalid">
+			*Please enter valid email address.</span>
+		</div>
+		</div>
+				
+		<div class="form-group">
+		<label class="control-label col-sm-2" >First Name:</label>
+		<div class="col-sm-6">
+		<input class="form-control" type="text" placeholder="Please enter first name" 
+		ng-model="user.firstName" name="firstName" ng-disabled="disableInput" required>
+	    <span style="color:red" ng-show="!loginForm.firstName.$pristine && loginForm.firstName.$error.required">
+		*Please enter at least one character.
+		</span>
+		</div>
+		</div>
+		
+		<div class="form-group">
+		<label class="control-label col-sm-2">Last Name:</label>
+		<div class="col-sm-6">
+		<input class="form-control" type="text" placeholder="Please enter last name" 
+		ng-model="user.lastName" name="lastName" ng-disabled="disableInput" required>
+		<span style="color:red" ng-show="!loginForm.lastName.$pristine && loginForm.lastName.$invalid">
+			*Please enter at least one character.
+		</span>
+		</div>
+		</div>
+		
+		<div class="form-group">
+		<label class="control-label col-sm-2">Phone No:</label>
+		<div class="col-sm-6">
+		<input class="form-control" type="text" placeholder="Please enter phone number" 
+		ng-model="user.phone" name="phone" ng-pattern="regex" ng-disabled="disableInput">
+		<span style="color:orange" class="help-block"
+		ng-show="phoneNumberOptional(loginForm.emailId.$valid,!loginForm.emailId.$pristine,!loginForm.phone.$pristine)">
+			{{phoneValidatorMessage}}</span>
+		<span style="color:red" class="help-block"
+		ng-show="phoneNumberSpecification(loginForm.emailId.$valid,!loginForm.phone.$pristine,loginForm.phone.$invalid)">
+			{{phoneValidatorMessage}}</span>
+		
+		</div>
+		</div>
+		
+		<div class="form-group">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-8">
+		<button type="submit" class="btn btn-primary" ng-click="confirm()"
+		ng-disabled="validFormOrNot(loginForm.$invalid,loginForm.firstName.$invalid,loginForm.lastName.$invalid,
+		loginForm.emailId.$invalid,loginForm.password.$invalid,loginForm.phone.$invalid,loginForm.phone.$pristine)">Done</button>
+		<!-- <button type="button" class="btn btn-primary" ng-show="addUsers" 
+		ng-click="addMoreUsers()">Add More Users</button>
+ -->	</div>
+		</div>
+	</form>
+	</div>
+	</div>

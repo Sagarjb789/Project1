@@ -1,0 +1,22 @@
+<div ng-repeat="item in products" ng-show="showProductsPage">
+					
+				 <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="images/{{item.img}}" alt="">
+                            <div class="caption">
+                            <!-- <button type="button" class="btn btn-warning pull-right" ng-click="itemPage(item)">Buy</button> -->
+                               <a ng-href="#itemPage/{{item.id}}" class="pull-right">View More</a>
+                                <h4 style="color:blue">{{item.name}}</h4>
+                                
+                                <p> Category : - {{item.category}}
+                                	<p><h4>{{item.price |currency : "Rs."}}</h4></p>
+                                </p>
+                            </div>
+                           
+                        </div>
+                    </div> 
+					
+					</div> 
+					
+					
+                

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="saleApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>saleApp</title>
+</head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+	
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="myApp.js"></script>
+
+<body>
+<div ng-controller="defaultCtrl">
+
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">saleApp!!</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <span class="glyphicon glyphicon-user"></span>
+      Sign Up 
+      <span class="caret"></span>
+      </a>
+        <ul class="dropdown-menu">
+          <li><a href="#userRegistration">User</a></li>
+          <li><a href="#">Admin</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <span class="glyphicon glyphicon-log-in"></span> 
+      Login
+      <span class="caret"></span>
+      </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">User</a></li>
+          <li><a href="#">Admin</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+  <h3>Right Aligned Navbar</h3>
+  <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
+  <div>
+<ng-view></ng-view>
+</div>
+  
+</div>
+</body>
+</html>
+
+
+<!-- https://www.npmjs.com/package/paypal-express-checkout-simple -->
